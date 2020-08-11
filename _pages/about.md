@@ -1,13 +1,7 @@
 ---
 layout: page
-title: About Me
+title: About
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
-
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+This blog shares our journey in the Coswara project. The project is launched by the [LEAP lab](http://leap.ee.iisc.ac.in/), based at the [Indian Institute of Science](http://iisc.ac.in), Bangalore. 
