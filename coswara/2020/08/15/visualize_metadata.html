@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Metadata visualization | COSWARA</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Metadata visualization" />
+<meta name="author" content="Neeraj Sharma" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Some bar plots and histograms." />
+<meta property="og:description" content="Some bar plots and histograms." />
+<link rel="canonical" href="https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html" />
+<meta property="og:url" content="https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html" />
+<meta property="og:site_name" content="COSWARA" />
+<meta property="og:image" content="https://iiscleap.github.io/coswara-blog/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-15T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Neeraj Sharma"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html"},"description":"Some bar plots and histograms.","@type":"BlogPosting","url":"https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html","headline":"Metadata visualization","dateModified":"2020-08-15T00:00:00-05:00","datePublished":"2020-08-15T00:00:00-05:00","image":"https://iiscleap.github.io/coswara-blog/images/chart-preview.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/coswara-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://iiscleap.github.io/coswara-blog/feed.xml" title="COSWARA" /><link rel="shortcut icon" type="image/x-icon" href="/coswara-blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Metadata visualization | COSWARA</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Metadata visualization" />
+<meta name="author" content="Neeraj Sharma" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Some bar plots and histograms." />
+<meta property="og:description" content="Some bar plots and histograms." />
+<link rel="canonical" href="https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html" />
+<meta property="og:url" content="https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html" />
+<meta property="og:site_name" content="COSWARA" />
+<meta property="og:image" content="https://iiscleap.github.io/coswara-blog/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-15T00:00:00-05:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Neeraj Sharma"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html"},"description":"Some bar plots and histograms.","@type":"BlogPosting","url":"https://iiscleap.github.io/coswara-blog/coswara/2020/08/15/visualize_metadata.html","headline":"Metadata visualization","dateModified":"2020-08-15T00:00:00-05:00","datePublished":"2020-08-15T00:00:00-05:00","image":"https://iiscleap.github.io/coswara-blog/images/chart-preview.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://iiscleap.github.io/coswara-blog/feed.xml" title="COSWARA" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/coswara-blog/">COSWARA</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/coswara-blog/about/">About</a><a class="page-link" href="/coswara-blog/search/">Search</a><a class="page-link" href="/coswara-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Metadata visualization</h1><p class="page-description">Some bar plots and histograms.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-15T00:00:00-05:00" itemprop="datePublished">
+        Aug 15, 2020
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Neeraj Sharma</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/coswara-blog/categories/#coswara">coswara</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/iiscleap/coswara-blog/tree/master/_notebooks/2020-08-15-visualize_metadata.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/coswara-blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/iiscleap/coswara-blog/master?filepath=_notebooks%2F2020-08-15-visualize_metadata.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/coswara-blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/iiscleap/coswara-blog/blob/master/_notebooks/2020-08-15-visualize_metadata.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/coswara-blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-08-15-visualize_metadata.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The coswara database is created by crowdsourcing respiratory sound samples. In this post we will visualize the crowd (or participant) distribution along certain dimensions collected in metadata questionaire. We will read the CSV file containing the metadata information of all the users (as on 07 August 2020).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description" open="">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_show</span>
+<span class="c1"># import some packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="p">(</span><span class="n">MultipleLocator</span><span class="p">,</span> <span class="n">FormatStrFormatter</span><span class="p">,</span>
+                               <span class="n">AutoMinorLocator</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">"ticks"</span><span class="p">)</span>
+
+<span class="c1"># load CSV file</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s1">'combined_plus_annotated_IS2020.csv'</span>
+<span class="n">DF</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./my_data/'</span><span class="o">+</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="c1"># plot data</span>
+<span class="n">gender_labels</span> <span class="o">=</span> <span class="n">DF</span><span class="p">[</span><span class="s1">'g'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">gender_cnt</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gender_labels</span><span class="p">)):</span>
+    <span class="n">gender_cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">DF</span><span class="p">[(</span><span class="n">DF</span><span class="p">[</span><span class="s1">'g'</span><span class="p">]</span> <span class="o">==</span> <span class="n">gender_labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="n">DF</span><span class="p">[</span><span class="s1">'cough-heavy-quality'</span><span class="p">]]))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">gender_cnt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span><span class="n">capsize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">hatch</span><span class="o">=</span><span class="s2">"</span><span class="se">\\\\</span><span class="s2">"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span><span class="n">width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">gender_cnt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span><span class="n">capsize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">hatch</span><span class="o">=</span><span class="s2">"//"</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span><span class="n">width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gender_cnt</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-.</span><span class="mi">3</span><span class="p">,</span><span class="n">v</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">'bold'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s1">'MALE'</span><span class="p">,</span><span class="s1">'FEMALE'</span><span class="p">],</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'COUNT'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="c1"># ax.set_xlim(0,5)</span>
+<span class="c1"># ax.set_ylim(200,1500)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'right'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'top'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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%0A">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="iiscleap/coswara-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/coswara-blog/coswara/2020/08/15/visualize_metadata.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/coswara-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/coswara-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/coswara-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/iiscleap%2FCoswara-Data" title="iiscleap/Coswara-Data"><svg class="svg-icon grey"><use xlink:href="/coswara-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/coswara_iisc" title="coswara_iisc"><svg class="svg-icon grey"><use xlink:href="/coswara-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
