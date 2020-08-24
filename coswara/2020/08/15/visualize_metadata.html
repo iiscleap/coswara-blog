@@ -164,14 +164,14 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<details class="description" open="">
+<details class="description">
       <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
         <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_show</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse</span>
 <span class="c1"># import some packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -290,14 +290,14 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<details class="description" open="">
+<details class="description">
       <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
         <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_show</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse</span>
 <span class="n">state_labels</span> <span class="o">=</span> <span class="n">DF</span><span class="p">[</span><span class="s1">'l_s'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 <span class="n">state_cnt</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">state_labels</span><span class="p">)):</span>
@@ -356,14 +356,14 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<details class="description" open="">
+<details class="description">
       <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
         <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_show</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'HEALTHY'</span><span class="p">,</span><span class="s1">'UNHEALTHY'</span><span class="p">]</span>
 <span class="n">category_cnt</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">category_cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">DF</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">DF</span><span class="p">[</span><span class="s1">'covid_status'</span><span class="p">]</span><span class="o">==</span><span class="s1">'healthy'</span><span class="p">)</span> <span class="o">&amp;</span>\
@@ -436,14 +436,14 @@ noisy, and bad (highly degraded). The resulting distribution across the nine sou
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<details class="description" open="">
+<details class="description">
       <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
         <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse_show</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'vowel-o'</span><span class="p">,</span><span class="s1">'vowel-e'</span><span class="p">,</span><span class="s1">'vowel-a'</span><span class="p">,</span><span class="s1">'cough-shallow'</span><span class="p">,</span><span class="s1">'cough-heavy'</span><span class="p">,</span><span class="s1">'breathing-shallow'</span><span class="p">,</span><span class="s1">'breathing-deep'</span><span class="p">,</span>\
           <span class="s1">'counting-normal'</span><span class="p">,</span><span class="s1">'counting-fast'</span><span class="p">]</span>
 <span class="n">category_cnt</span> <span class="o">=</span> <span class="p">[]</span>
