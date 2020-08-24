@@ -7,7 +7,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: COSWARA
-description: Ann effort towards COVID-19 diagnosis using sound signals
+description: Towards COVID-19 diagnosis using sound signals
 github_username: iiscleap
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "coswara-blog"
