@@ -172,7 +172,7 @@ window.onload = wrap_img;
 <p>We are in the process of obtaining sound activity annotations for every sound file in the COSWARA database via human listening. Below is some analysis of the 286 annotated sound files. An example of annotations is shown below. The blue shade corresponds to the human annotation. The red trace corresponds to intensity obtained from PRAAT.</p>
 <p><img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_example.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
 <h2 id="File-duration-vs.-Activity-duration">File duration vs. Activity duration<a class="anchor-link" href="#File-duration-vs.-Activity-duration"> </a></h2><p><img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_fileDur_vs_activity_dur.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
-<h2 id="Comparison-of-intensity-of-segments">Comparison of intensity of segments<a class="anchor-link" href="#Comparison-of-intensity-of-segments"> </a></h2><p>We compute the intensity over short-time segments (40 msec, and hop by 1 sample) using <a href="http://www.fon.hum.uva.nl/praat/manual/Sound__To_Intensity___.html">PRAAT</a>. We show comparison with 60 sound files (30 healthy and 30 COVID).</p>
+<h2 id="Comparison-of-intensity">Comparison of intensity<a class="anchor-link" href="#Comparison-of-intensity"> </a></h2><p>We compute the intensity over short-time segments (40 msec, and hop by 1 sample) using <a href="http://www.fon.hum.uva.nl/praat/manual/Sound__To_Intensity___.html">PRAAT</a>. We show comparison between annotated as activity and no activity segments, with 60 sound files (30 healthy and 30 COVID).</p>
 <ul>
 <li>For the below plot we pooled annotated segments from all sound categories.</li>
 </ul>
@@ -183,6 +183,19 @@ window.onload = wrap_img;
 </li>
 <li><p>Similar to above but comparison of noise (or background) activity.
 <img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_no_activity_categories_intensity.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+</li>
+</ul>
+<h2 id="Comparison-of-harmonic-to-noise-ration-(HNR)-of-segments">Comparison of harmonic-to-noise ration (HNR) of segments<a class="anchor-link" href="#Comparison-of-harmonic-to-noise-ration-(HNR)-of-segments"> </a></h2><p>We compute the intensity over short-time segments (40 msec, and hop by 1 sample) using <a href="http://www.fon.hum.uva.nl/praat/manual/Sound__To_Harmonicity__cc____.html.">PRAAT</a>. We show comparison between annotated as activity and no activity segments, with 60 sound files (30 healthy and 30 COVID).</p>
+<ul>
+<li>For the below plot we pooled annotated segments from all sound categories.</li>
+</ul>
+<p><img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_hist_activity_noactivity_hnr.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+<ul>
+<li><p>For the below plot we show a categoy wise cmparison. Also, we show two groups, healthy and COVID, for each sound category. The below plot is for comparison of activity.
+<img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_activity_categories_hnr.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+</li>
+<li><p>Similar to above but comparison of noise (or background) activity.
+<img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_no_activity_categories_hnr.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
 </li>
 </ul>
 <h2 id="Intensity-overlaid-with-human-annotations">Intensity overlaid with human annotations<a class="anchor-link" href="#Intensity-overlaid-with-human-annotations"> </a></h2><table>
