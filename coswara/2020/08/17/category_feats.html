@@ -169,7 +169,81 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Here-we-provide-some-visualization-of-features">Here we provide some visualization of features<a class="anchor-link" href="#Here-we-provide-some-visualization-of-features"> </a></h2><h3 id="Narrowband-spectrograms">Narrowband spectrograms<a class="anchor-link" href="#Narrowband-spectrograms"> </a></h3><table>
+<p>We are in the process of obtaining sound activity annotations for every sound file in the COSWARA database via human listening. Below is some analysis of the 60 annotated sound files (30 healthy and 30 VOVID). An example of annotations is shown below. The blue shade corresponds to the human annotation. The red trace corresponds to intensity obtained from PRAAT.</p>
+<p><img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_example.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+<h2 id="File-duration-vs.-Activity-duration">File duration vs. Activity duration<a class="anchor-link" href="#File-duration-vs.-Activity-duration"> </a></h2><p><img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_fileDur_vs_activity_dur.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+<h2 id="Comparison-of-intensity-of-segments">Comparison of intensity of segments<a class="anchor-link" href="#Comparison-of-intensity-of-segments"> </a></h2><p>We compute the intensity over short-time segments (40 msec, and hop by 1 sample) using <a href="http://www.fon.hum.uva.nl/praat/manual/Sound__To_Intensity___.html">PRAAT</a>.</p>
+<ul>
+<li>For the below plot we pooled annotated segments from all sound categories.</li>
+</ul>
+<p><img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_hist_activity_noactivity_intensity.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+<ul>
+<li><p>For the below plot we show a categoy wise cmparison. Also, we show two groups, healthy and COVID, for each sound category. The below plot is for comparison of activity.
+<img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_activity_categories_intensity.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+</li>
+<li><p>Similar to above but comparison of noise (or background) activity.
+<img src="/coswara-blog/images/copied_from_nb/./my_images/coswara_annot_boxplot_no_activity_categories_intensity.png" alt="" title="Credit: http://coswara.iisc.ac.in/" /></p>
+</li>
+</ul>
+<h2 id="Intensity-overlaid-with-human-annotations">Intensity overlaid with human annotations<a class="anchor-link" href="#Intensity-overlaid-with-human-annotations"> </a></h2><table>
+<thead><tr>
+<th>Sound Category</th>
+<th>Healthy</th>
+<th>COVID-19</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cough shallow</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_cough-shallow_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_cough-shallow_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>cough heavy</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_cough-heavy_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_cough-heavy_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>vowel-o</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_vowel-o_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_vowel-o_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>vowel-e</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_vowel-e_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_vowel-e_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>vowel-a</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_vowel-a_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_vowel-a_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>breathing-shallow</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_breathing-shallow_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_breathing-shallow_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>breathing-deep</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_breathing-deep_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_breathing-deep_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>counting-normal</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_counting-normal_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_counting-normal_intensity.png">Click here</a></td>
+</tr>
+<tr>
+<td>counting-fast</td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_counting-fast_intensity.png">Click here</a></td>
+<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_counting-fast_intensity.png">Click here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Spectrograms">Spectrograms<a class="anchor-link" href="#Spectrograms"> </a></h2><ul>
+<li>Narrowband</li>
+</ul>
+<table>
 <thead><tr>
 <th>Sound Category</th>
 <th>Healthy</th>
@@ -224,7 +298,10 @@ window.onload = wrap_img;
 </tr>
 </tbody>
 </table>
-<h3 id="Wideband-spectrograms">Wideband spectrograms<a class="anchor-link" href="#Wideband-spectrograms"> </a></h3><table>
+<ul>
+<li>Wideband</li>
+</ul>
+<table>
 <thead><tr>
 <th>Sound Category</th>
 <th>Healthy</th>
@@ -276,61 +353,6 @@ window.onload = wrap_img;
 <td>counting-fast</td>
 <td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_counting-fast_wb_spectgm.png">Click here</a></td>
 <td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_counting-fast_wb_spectgm.png">Click here</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="Intensity-overlaid-with-human-annotations">Intensity overlaid with human annotations<a class="anchor-link" href="#Intensity-overlaid-with-human-annotations"> </a></h3><table>
-<thead><tr>
-<th>Sound Category</th>
-<th>Healthy</th>
-<th>COVID-19</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cough shallow</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_cough-shallow_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_cough-shallow_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>cough heavy</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_cough-heavy_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_cough-heavy_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>vowel-o</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_vowel-o_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_vowel-o_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>vowel-e</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_vowel-e_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_vowel-e_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>vowel-a</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_vowel-a_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_vowel-a_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>breathing-shallow</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_breathing-shallow_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_breathing-shallow_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>breathing-deep</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_breathing-deep_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_breathing-deep_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>counting-normal</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_counting-normal_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_counting-normal_intensity.png">Click here</a></td>
-</tr>
-<tr>
-<td>counting-fast</td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_healthy_counting-fast_intensity.png">Click here</a></td>
-<td><a href="https://github.com/iiscleap/coswara-blog/raw/master/_notebooks/my_images/coswara_covid_counting-fast_intensity.png">Click here</a></td>
 </tr>
 </tbody>
 </table>
